@@ -43,9 +43,9 @@ export default function CustomHeader() {
                         <Image source={require('../assets/icons/maps-and-flags.png')} style={styles.icons} />
                         <Text style={{ flex: 1 }}>123 Main Road, Dhanmondi, Dhaka, Bangladesh</Text>
                     </View>
-                    <View style={[styles.flexRow, styles.spaceBottom, { backgroundColor: '#D3D3D3', borderRadius: 10, padding: 5, }]}>
+                    <View style={[styles.flexRow, styles.spaceBottom, { backgroundColor: 'rgba(90, 233, 238, 0.32)', borderRadius: 10, padding: 5, }]}>
                         <Image source={require('../assets/icons/map.png')} style={styles.icons} />
-                        <Text style={{ color: "gray" }}>1.6km Away</Text>
+                        <Text style={{ color: "#1fc5caff" }}>1.6km Away</Text>
                     </View>
                 </View>
             </View>

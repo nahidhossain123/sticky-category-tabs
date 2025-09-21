@@ -1,27 +1,40 @@
-import { CategoryType, tabCategories } from '@/data';
-import React, { useState } from 'react';
+import { CategoryType } from '@/data';
+import React, { useEffect, useRef } from 'react';
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 interface HorizontalScrollTabPropsType {
-    onItemPress: (item: CategoryType) => void
+    activeSection: number,
+    selectedTab: CategoryType,
+    setSelectedTab: React.Dispatch<React.SetStateAction<CategoryType>>,
+    onItemPress: (item: CategoryType) => void,
+    listData: CategoryType[]
 }
 
-export default function HorizontalScrollTab({ onItemPress }: HorizontalScrollTabPropsType) {
-    const [selectedTab, setSelectedTab] = useState(tabCategories[0])
+export default function HorizontalScrollTab({ activeSection, selectedTab, setSelectedTab, onItemPress, listData }: HorizontalScrollTabPropsType) {
+    const flatListRef = useRef<FlatList>(null)
+    const scrollToItem = (index: number) => {
+        flatListRef.current?.scrollToIndex({ index, animated: true });
+    };
+    useEffect(() => {
+        if (activeSection != undefined) {
+            scrollToItem(activeSection)
+            setSelectedTab(listData[activeSection])
+        }
+    }, [activeSection])
     return (
         <View style={styles.container}>
             <FlatList
+                ref={flatListRef}
                 showsHorizontalScrollIndicator={false}
                 showsVerticalScrollIndicator={false}
-                data={tabCategories}
+                data={listData}
                 horizontal
                 keyExtractor={(item) => item.id}
-                renderItem={({ item }) => (
+                renderItem={({ item, index }) => (
                     <TouchableOpacity onPress={() => {
-                        onItemPress(item)
-                        setSelectedTab(item)
+                        onItemPress({ ...item, index })
                     }} style={[styles.item, selectedTab?.id == item?.id ? styles.activeTab : '']}>
-                        <Text style={[styles.name, selectedTab?.id == item?.id ? { color: 'red' } : '']}>{item.name}</Text>
+                        <Text style={[styles.name, selectedTab?.id == item?.id ? { color: '#12bec4ff' } : '']}>{item.name}</Text>
                     </TouchableOpacity>
                 )}
             />
@@ -41,13 +54,13 @@ const styles = StyleSheet.create({
         paddingVertical: 10
     },
     activeTab: {
-        color: 'red',
-        borderBottomColor: 'red',
+        color: '#12bec4ff',
+        borderBottomColor: '#12bec4ff',
         borderBottomWidth: 3,
     },
 
     name: {
         fontSize: 16,
-        fontWeight: 'bold'
+        color: '#afafafff'
     }
 });
