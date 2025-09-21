@@ -23,28 +23,25 @@ In the output, you'll find options to open the app in a
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Brief explanation
+After reviewing the design shown in the video, I decided to create a category screen that serves as a container for all UI components. To maintain modularity and scalability, I divided the screen into the following components:
+a) Custom Header
+b) Horizontal Scroll Tab
+c) Category Renderer
+d) Some UI Compoentns e.g buttons,
+I have created a category screen where i render all the component.
+Architectural Decisions:
+   choose component based architecture as it is easy to use, test , debug and mantain 
+   use typescript for typesefty that allows better developer experince and effect to write error free code 
+   
 
-## Get a fresh project
+## Notes:
+More Time
+1. start unit testing 
+2. impove the UI 
+3. Code clean up
 
-When you're ready, run:
+Trade-offs
+4. I saw when i am clicking on the horizontal scroll tab it auto scrolling to left 
 
-```bash
-npm run reset-project
-```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
