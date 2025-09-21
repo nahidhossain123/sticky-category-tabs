@@ -32,9 +32,10 @@ After reviewing the design shown in the video, I decided to create a category sc
 <li> Some UI Compoentns e.g buttons</li>
 </ol>
 I have created a category screen where i render all the component.
+<br>
 Architectural Decisions:
    choose component based architecture as it is easy to use, test , debug and mantain 
-   use typescript for typesefty that allows better developer experince and effect to write error free code 
+   use typescript for typesefty that allows better developer experince and effective to write error free code 
    
 
 ## Notes:
