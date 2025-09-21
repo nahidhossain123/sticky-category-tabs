@@ -45,3 +45,16 @@ export const tabCategories =  [
   },
 
 ];
+
+export const hospitals = [
+  { id: "1", name: "General City Hospital" },
+  { id: "2", name: "Mercy Medical Center" },
+  { id: "3", name: "St. Mary's Hospital" },
+  { id: "4", name: "Sunrise Health Clinic" },
+  { id: "5", name: "Green Valley Hospital" },
+  { id: "6", name: "Riverbend Medical Institute" },
+  { id: "7", name: "Hopewell Community Hospital" },
+  { id: "8", name: "Northside Healthcare Center" },
+  { id: "9", name: "Lakeside General Hospital" },
+  { id: "10", name: "Oakwood Medical Center" }
+];
