@@ -25,10 +25,12 @@ In the output, you'll find options to open the app in a
 
 ## Brief explanation
 After reviewing the design shown in the video, I decided to create a category screen that serves as a container for all UI components. To maintain modularity and scalability, I divided the screen into the following components:
-a) Custom Header
-b) Horizontal Scroll Tab
-c) Category Renderer
-d) Some UI Compoentns e.g buttons,
+<ol>
+<li>Custom Header</li>
+<li>Horizontal Scroll Tab</li>
+<li> Category Renderer</li>
+<li> Some UI Compoentns e.g buttons</li>
+</ol>
 I have created a category screen where i render all the component.
 Architectural Decisions:
    choose component based architecture as it is easy to use, test , debug and mantain 
